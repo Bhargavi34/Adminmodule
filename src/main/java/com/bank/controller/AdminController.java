@@ -41,6 +41,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/display")
+	
 	public ModelAndView DisplayAll(HttpServletRequest request, HttpServletResponse response,ModelAndView model, @ModelAttribute AdminModel am) throws ServerException,IOException, ServletException{
 		List<AdminModel> list = new ArrayList<AdminModel>();
 		list = adao.getAllInfo(am);
@@ -65,4 +66,10 @@ public class AdminController {
 		return new ModelAndView("redirect:/display");
 	}
     
+	@RequestMapping(value="/approve/{id}",method = RequestMethod.GET)
+	public ModelAndView saveData1(@PathVariable String id)
+	{
+	int i = adao.saveData1(id);
+		return new ModelAndView("redirect:/display");
+	}
 }

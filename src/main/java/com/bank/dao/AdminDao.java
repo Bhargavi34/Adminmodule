@@ -44,11 +44,11 @@ public class AdminDao {
 public int deleteData(String id) {
 	String query= "delete from gr13_Admin where id =?";
 	return jdbcTemplate.update(query, new Object[] {id});
+}
+
+
+
+public int saveData1(String id) {
+	String query = "insert into G13_Account (id,name) select id,name from gr13_Admin where id=?";   //values('"+a.getId()+"','"+a.getName()+"')";
+	return jdbcTemplate.update(query,new Object[] {id});
 }}
-
-
-/*public int saveData1(AdminModel a) {
-	String query = "insert into G13_Account values('"+a.getId()+"','"+a.getName()+"')";
-	return jdbcTemplate.update(query);
-}*/
-

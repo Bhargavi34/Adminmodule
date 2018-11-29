@@ -19,7 +19,7 @@
         <tr>
           <td><c:out value="${current.getId()}" /></td>
           <td><c:out value="${current.getName()}" /></td>
-    
+          <td><a href="approve/${current.id}">Approve</a></td> 
    <td><a href="delete/${current.id}">Delete</a></td> 
         </tr>
       </c:forEach>
